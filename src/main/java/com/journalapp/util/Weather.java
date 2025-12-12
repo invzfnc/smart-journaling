@@ -3,6 +3,9 @@ package main.java.com.journalapp.util;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Retrieves current weather.
+ */
 public class Weather {
     /**
      * Retrieve current weather in Kuala Lumpur from
@@ -58,7 +61,7 @@ public class Weather {
     /**
      * Demonstrate the usage of getCurrentWeather method.
      */
-    public static void main(String[] args) {
+    private static void main(String[] args) {
         System.out.println("The current weather now is: " + getCurrentWeather());
     }
 }

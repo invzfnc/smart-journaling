@@ -4,6 +4,9 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Analyze the mood of user given the content of journal entry.
+ */
 public class MoodAnalyzer {
     /**
      * Analyze mood of user given the content of journal entry.
@@ -42,7 +45,7 @@ public class MoodAnalyzer {
     /**
      * Demonstrate the use of this class.
      */
-    static void main(String[] args) {
+    private static void main(String[] args) {
         System.out.println(analyze("my hair loss issue is getting worse..."));  // Negative
     }
 }
