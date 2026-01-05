@@ -48,7 +48,7 @@ public class Weather {
     private static String translateWeather(String weather) {
         if (weather.equals("Berjerebu"))
             return "Hazy";
-        else if (weather.equals("Tiada Hujan"))
+        else if (weather.equals("Tiada hujan"))
             return "Sunny";
         else if (weather.startsWith("Hujan"))
             return "Rainy";
