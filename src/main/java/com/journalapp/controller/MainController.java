@@ -79,12 +79,17 @@ public class MainController extends Application {
     public void showSignUpView() { primaryStage.getScene().setRoot(signUpView.getView()); }
 
     public void showMainApp() {
-        if (mainAppLayout == null) createMainAppLayout();
+        mainAppLayout = null;
+        createMainAppLayout();
         primaryStage.getScene().setRoot(mainAppLayout);
         loadDashboard();
     }
 
-    public void logout() { showLoginView(); }
+    public void logout() {
+        Session.logout();
+        mainAppLayout = null;
+        showLoginView();
+    }
 
     private void loadDashboard() { mainAppLayout.setCenter(dashboardView.getView()); }
     private void loadJournals() { mainAppLayout.setCenter(journalView.getView()); }
