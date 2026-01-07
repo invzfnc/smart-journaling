@@ -59,13 +59,28 @@ public class JournalsController {
             List<Entry> myEntries = Session.listEntries();
 
             // Sort: Newest First
-            if (myEntries != null) {
+            if (myEntries != null && !myEntries.isEmpty()) {
+
                 Collections.reverse(myEntries);
 
                 for (Entry entry : myEntries) {
                     journalListContainer.getChildren().add(createJournalCard(entry));
                 }
+
+            } else {
+                Label emptyLabel = new Label(
+                        "Start writing your first journal ✨"
+                );
+                emptyLabel.setStyle(
+                        "-fx-text-fill: #666;" +
+                                "-fx-font-size: 14px;" +
+                                "-fx-alignment: center;"
+                );
+                journalListContainer.setAlignment(Pos.CENTER);
+                journalListContainer.getChildren().add(emptyLabel);
             }
+
+
         } else {
             journalListContainer.getChildren().add(new Label("Please log in to see your journals."));
         }
