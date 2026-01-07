@@ -2,6 +2,7 @@ package main.java.com.journalapp.controller;
 
 import main.java.com.journalapp.model.Entry;
 import main.java.com.journalapp.util.Session;
+import main.java.com.journalapp.util.Time;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -69,7 +70,9 @@ public class DashboardController {
         dateLabel.setFont(Font.font("Segoe UI", FontWeight.BOLD, 12));
         dateLabel.setTextFill(Color.web("#7f8c8d"));
 
-        Label greetingLabel = new Label("Good morning, " + currentUsername + ".");
+        String timePeriod = Time.getPeriodOfDay();
+        String greetingText = "Good " + timePeriod + ", " + currentUsername + ".";
+        Label greetingLabel = new Label(greetingText);
         greetingLabel.setFont(Font.font("Georgia", FontWeight.NORMAL, 32));
         greetingLabel.setTextFill(Color.web("#2d3436"));
 
